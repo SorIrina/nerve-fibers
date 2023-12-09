@@ -1,0 +1,38 @@
+import numpy as np
+from scipy.special import hankel2
+
+E0 = 1.0  
+k = 1.0   
+k0 = 1.0  
+a = 1.0   
+M = 10    
+
+def E_padaющая(x):
+    return E0 * np.exp(1j * k * x)
+
+def B_m(m):
+    Im = 1.0 
+    Nm = 1.0  
+    return Im - 1j * Nm
+
+def E_рассеянная(rho, phi):
+    E_scatter = 0
+    for m in range(-M, M+1):
+        Bm = B_m(m)  
+        E_scatter += Bm * hankel2(m, k0 * a) * np.exp(-1j * m * phi)
+    return E_scatter
+
+def E_z(x, rho, phi):
+    return E_padaющая(x) + E_рассеянная(rho, phi)
+
+x = 0.5   
+rho = 1.0 
+phi = np.pi/4 
+
+E_padaющая_val = E_padaющая(x)
+E_рассеянная_val = E_рассеянная(rho, phi)
+Ez_val = E_z(x, rho, phi)
+
+print("Падающая волна:", E_padaющая_val, "(В/м)")
+print("Рассеянная волна:", E_рассеянная_val, "(В/м)")
+print("Общее поле E_z:", Ez_val, "(В/м)")
