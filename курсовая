@@ -265,67 +265,90 @@ E^{s}_z=\sum\limits^{\infty}_{-\infty} D_mJ_m(k\rho)e^{-im{\varphi}}e^{-ik_zz}, 
 \end{equation}
 На границе $(\rho=a_2)$:
 \begin{equation}
-	A_2J_m(k_1a_2)+B_2Y_m(k_1a_2)=A_1H^(2)_m(k_0a_2)+H_0(-i)^mJ_m(k_0a_2)
+	A_2J_m(k_1a_2)+B_2Y_m(k_1a_2)=A_1H^{(2)}_m(k_3a_2)+H_0(-i)^mJ_m(k_3a_2)
 \end{equation}
 \begin{equation}
-	C_2J_m(k_1a_2)+D_2Y_m(k_1a_2)=C_1H^(2)_m(k_0a_2)+E_0(-i)^mJ_m(k_0a_2)
+	C_2J_m(k_1a_2)+D_2Y_m(k_1a_2)=C_1H^{(2)}_m(k_3a_2)+E_0(-i)^mJ_m(k_3a_2)
 \end{equation}
 \begin{equation} 
-	\frac{1}{\mu_1}[A_2J'_m(k_1a_2)+B_2Y'_m(k_1a_2)]=\frac{1}{\mu_0}[A_1H^(2)'_m(k_0a_2)+H_0(-i)^mJ'_m(k_0a_2)]
+	\frac{1}{\mu_1}[A_2J'_m(k_1a_2)+B_2Y'_m(k_1a_2)]=\frac{1}{\mu_3}[A_1{H^{(2)}_m}'(k_3a_2)+H_0(-i)^mJ'_m(k_3a_2)]
 \end{equation}
 \begin{equation}
-	\frac{1}{\varepsilon_1}[C_2J'_m(k_1a_2)+D_2Y'_m(k_1a_2)]=\frac{1}{\varepsilon_0}[C_1H^(2)'_m(k_0a_2)+E_0(-i)^mJ'_m(k_0a_2)
+	\frac{1}{\varepsilon_1}[C_2J'_m(k_1a_2)+D_2Y'_m(k_1a_2)]=\frac{1}{\varepsilon_3}[C_1{H^{(2)}_m}'(k_3a_2)+E_0(-i)^mJ'_m(k_3a_2)]
 \end{equation}
 где $k_1=\sqrt{\varepsilon_1\mu_1k^2_0-k^2_z}$, $k_2=\sqrt{\varepsilon_2\mu_2k^2_0-k^2_z}$,
 $k_3=\sqrt{\varepsilon_3\mu_3k^2_0-k^2_z}$.
 
 Далее напишем матрицу, полученной системы:
 \begin{multline*}
-	\hspace*{-2.2cm}\left( \begin{array}{cccccccc}
-		J_m(k_1a_1) & Y_m & -J_m(k_2a_1) & 0 & 0 & 0 & 0 & 0 \cr
-		0 & 0 & 0 & J_m(k_1a_1) & Y_m(k_1a_1) & -J_m(k_2a_1) & 0 & 0 \cr
-		J'_m(k_1a_1) & Y'_m(k_1a_1) & -\xi_3J'_m(k_2a_1) & 0 & 0 & 0 & 0 & 0 \cr
-		0 & 0 & 0 & J'_m(k_1a_1) & Y'_m(k_1a_1) & -\xi_4J'_m(k_2a_1) & 0 & 0 \cr
-		J_m (k_1a_2) & Y_m(k_1a_2) & 0 & 0 & 0 & 0 & -H^(2)_m(k_0a_2) & 0 \cr
-		0 & 0 & 0 & J_m(k_1a_2) & Y_m(k_1a_2) & 0 & 0 & -H^(2)_m(k_0a_2) \cr
-		J'_m(k_1a_2) & Y'_m(k_1a_2) & 0 & 0 & 0 & 0 & -\xi_1H^(2)_m(k_0a_2) & 0 \cr
-		0 & 0 & 0 & J'_m(k_1a_2) & Y'_m(k_1a_2) & 0 & 0 & -\xi_2H'^(2)_m(k_0a_2) \cr
-	\end{array}\right)\bullet \\
-	\begin{flushleft}
-		\hspace*{-1.6cm}\bullet\left( \begin{array}{c}
-		A_2 \cr
-		B_2 \cr
-		A_3 \cr
-		C_2 \cr
-		D_2 \cr
-		C_3 \cr
-		A_1 \cr
-		C_1 \cr
-	\end{array}\right)=\left( \begin{array}{c}
-		0 \cr
-		0 \cr
-		0 \cr
-		0 \cr
-		H_0(-i)^mJ_m(k_0a_2) \cr
-		E_0(-i)^mJ_m(k_0a_2) \cr
-		H_0(-i)^m(\frac{mk_z}{k_0a_2}J_m(k_0a_2)-ik_0J'_m(k_0a_2)) \cr
-		E_0(-i)^m(\frac{mk_z}{k_0a_2}J_m(k_0a_2)+ik_0J'_m(k_0a_2)) \cr
-	\end{array}\right),
-	\end{flushleft}
-\end{multline*} \\
-где $\xi_1=\frac{\varepsilon_1k_0}{\varepsilon_0k_1}$, $\xi_2=\frac{\mu_1k_0}{\mu_0k_1}$, $\xi_3=\frac{\varepsilon_2k_1}{\varepsilon_1k_2}$, $\xi_4=\frac{\mu_2k_1}{\mu_1k_2}$
+	\hspace*{-2.2cm}
+	\left( 
+	\begin{array}{cccccccc}
+		J_m(k_1 a_1) & Y_m(k_1 a_1) & -J_m(k_2 a_1) & 0 & 0 & 0 & 0 & 0 \\
+		0 & 0 & 0 & J_m(k_1 a_1) & Y_m(k_1 a_1) & -J_m(k_2 a_1) & 0 & 0 \\
+		J'_m(k_1 a_1) & Y'_m(k_1 a_1) & -\xi_3 J'_m(k_2 a_1) & 0 & 0 & 0 & 0 & 0 \\
+		0 & 0 & 0 & J'_m(k_1 a_1) & Y'_m(k_1 a_1) & -\xi_4 J'_m(k_2 a_1) & 0 & 0 \\
+		J_m(k_1 a_2) & Y_m(k_1 a_2) & 0 & 0 & 0 & 0 & -H^{(2)}_m(k_0 a_2) & 0 \\
+		0 & 0 & 0 & J_m(k_1 a_2) & Y_m(k_1 a_2) & 0 & 0 & -H^{(2)}_m(k_0 a_2) \\
+		J'_m(k_1 a_2) & Y'_m(k_1 a_2) & 0 & 0 & 0 & 0 & -\xi_1 H^{(2)\prime}_m(k_0 a_2) & 0 \\
+		0 & 0 & 0 & J'_m(k_1 a_2) & Y'_m(k_1 a_2) & 0 & 0 & -\xi_2 H^{(2)\prime}_m(k_0 a_2)
+	\end{array} 
+	\right)
+	\cdot
+	\bullet\\\bullet
+	\cdot
+	\left( 
+	\begin{array}{c}
+		A_2 \\
+		B_2 \\
+		A_3 \\
+		C_2 \\
+		D_2 \\
+		C_3 \\
+		A_1 \\
+		C_1
+	\end{array}
+	\right)
+	=
+	\left( 
+	\begin{array}{c}
+		0 \\
+		0 \\
+		0 \\
+		0 \\
+		H_0(-i)^m J_m(k_3 a_2) \\
+		E_0(-i)^m J_m(k_3 a_2) \\
+		H_0(-i)^m \left( \frac{m K_z}{k_3 a_2} J_m(k_3 a_2) - i k_0 J'_m(k_3 a_2) \right) \\
+		E_0(-i)^m \left( \frac{m K_z}{k_3 a_2} J_m(k_3 a_2) + i k_3 J'_m(k_3 a_2) \right)
+	\end{array}
+	\right)
+\end{multline*}
+
+где $\xi_1=\frac{\varepsilon_1k_3}{\varepsilon_3k_1}$, $\xi_2=\frac{\mu_1k_3}{\mu_3k_1}$, $\xi_3=\frac{\varepsilon_2k_1}{\varepsilon_1k_2}$, $\xi_4=\frac{\mu_2k_1}{\mu_1k_2}$
 
 Из этой матрицы получим коэффициенты:
 \begin{equation}
 	\hspace*{-2cm}A_2=\frac{\left| \begin{array}{cccccccc}
-			J_m(k_1a_1) & Y_m & -J_m(k_2a_1) & 0 & 0 & 0 & 0 & 0 \cr
+			0 & Y_m(k_1a_1) & -J_m(k_2a_1) & 0 & 0 & 0 & 0 & 0 \cr
 			0 & 0 & 0 & J_m(k_1a_1) & Y_m(k_1a_1) & -J_m(k_2a_1) & 0 & 0 \cr
-			J'_m(k_1a_1) & Y'_m(k_1a_1) & -\xi_3J'_m(k_2a_1) & 0 & 0 & 0 & 0 & 0 \cr
+			0 & Y'_m(k_1a_1) & -\xi_3J'_m(k_2a_1) & 0 & 0 & 0 & 0 & 0 \cr
 			0 & 0 & 0 & J'_m(k_1a_1) & Y'_m(k_1a_1) & -\xi_4J'_m(k_2a_1) & 0 & 0 \cr
-			J_m (k_1a_2) & Y_m(k_1a_2) & 0 & 0 & 0 & 0 & -H^(2)_m(k_0a_2) & 0 \cr
-			0 & 0 & 0 & J_m(k_1a_2) & Y_m(k_1a_2) & 0 & 0 & -H^(2)_m(k_0a_2) \cr
-			J'_m(k_1a_2) & Y'_m(k_1a_2) & 0 & 0 & 0 & 0 & -\xi_1H^(2)_m(k_0a_2) & 0 \cr
-			0 & 0 & 0 & J'_m(k_1a_2) & Y'_m(k_1a_2) & 0 & 0 & -\xi_2H'^(2)_m(k_0a_2) \cr
+			H_0(-i)^m J_m(k_3 a_2) & Y_m(k_1a_2) & 0 & 0 & 0 & 0 & -H^{(2)}_m(k_3a_2) & 0 \cr
+			E_0(-i)^m J_m(k_3 a_2) & 0 & 0 & J_m(k_1a_2) & Y_m(k_1a_2) & 0 & 0 & -H^{(2)}_m(k_3a_2) \cr
+			H_0(-i)^m \left( \frac{m K_z}{k_3 a_2} J_m(k_3 a_2) - i k_0 J'_m(k_3 a_2) \right) & Y'_m(k_1a_2) & 0 & 0 & 0 & 0 & -\xi_1H^{(2)}_m(k_3a_2) & 0 \cr
+			E_0(-i)^m \left( \frac{m K_z}{k_3 a_2} J_m(k_3 a_2) + i k_3 J'_m(k_3 a_2) \right) & 0 & 0 & J'_m(k_1a_2) & Y'_m(k_1a_2) & 0 & 0 & -\xi_2H'^{(2)}_m(k_3a_2) \cr
+		\end{array}\right|}{det}
+\end{equation}
+\begin{equation}
+	\hspace*{-2cm}B_2=\frac{\left| \begin{array}{cccccccc}
+		J_m(k_1 a_1) & Y_m(k_1 a_1) & -J_m(k_2 a_1) & 0 & 0 & 0 & 0 & 0 \\
+		0 & 0 & 0 & J_m(k_1 a_1) & Y_m(k_1 a_1) & -J_m(k_2 a_1) & 0 & 0 \\
+		J'_m(k_1 a_1) & Y'_m(k_1 a_1) & -\xi_3 J'_m(k_2 a_1) & 0 & 0 & 0 & 0 & 0 \\
+		0 & 0 & 0 & J'_m(k_1 a_1) & Y'_m(k_1 a_1) & -\xi_4 J'_m(k_2 a_1) & 0 & 0 \\
+		J_m(k_1 a_2) & Y_m(k_1 a_2) & 0 & 0 & 0 & 0 & -H^{(2)}_m(k_0 a_2) & 0 \\
+		0 & 0 & 0 & J_m(k_1 a_2) & Y_m(k_1 a_2) & 0 & 0 & -H^{(2)}_m(k_0 a_2) \\
+		J'_m(k_1 a_2) & Y'_m(k_1 a_2) & 0 & 0 & 0 & 0 & -\xi_1 H^{(2)\prime}_m(k_0 a_2) & 0 \\
+		0 & 0 & 0 & J'_m(k_1 a_2) & Y'_m(k_1 a_2) & 0 & 0 & -\xi_2 H^{(2)\prime}_m(k_0 a_2)
 		\end{array}\right|}{det}
 \end{equation}
 \end{document}
