@@ -1,0 +1,331 @@
+\documentclass[a4paper,12pt]{article}
+\usepackage[T2A]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[english, russian]{babel}
+\usepackage{graphicx}
+\usepackage{amsmath,amssymb}
+\usepackage{indentfirst}
+\usepackage{hyperref}
+\usepackage{float}
+\DeclareGraphicsExtensions{.pdf,.png,.jpg}
+
+%\usepackage[compat2, top=2cm, bottom=2cm, left=2cm,
+%right=2cm, nohead]{geometry}
+\textwidth=17cm
+\textheight=23cm
+\topmargin=-17mm
+%\setlength{\topmargin}{-10mm}
+\oddsidemargin=-0.6cm
+
+% Title Page
+\begin{document}
+\section{Введение}
+
+Миелинизированный аксон представляет собой важнейший элемент нервной системы, обеспечиваюший быстрое проведение нервных импульсов. Миелиновая оболочка, окружающая аксон, состоит из липидов и белков, что делает её высокоанизотропной средой с уникальными электромагнитными свойствами. Изучение рассеяния электромагнитных волн на таких структурах имеет фундаментальное значение для понимания механизмов взаимодействия внешних электромагнитных полей с биологическими тканями. 
+Рассеяние электромагнитных волн – это явление, при котором падающее излучение изменяет своё направление, амплитуду и фазу при взаимодействии с препятствием или неоднородностью среды. В случае миелинизированныз аксонов это взаимодействие обусловлено их многослойной структурой, диэлектрическими свойствами миелина и проводящими характеристиками аксоплазмы. Особый интерес вызывает то, как геометрия и электрофизические параметры аксона влияют на характер рассеяния.
+Актуальность темы обусловлена несколькими факторами. Во-первых, современные методы диагностики нейродегенеративных заболеваний, такие как рассеянный склероз, часто основанный на оценке состояния миелиновой оболочки. Изменения её толщины, состава и структуры приводят к модификации электромагнитного отклика, что может быть использовано для раннего выявления патологий. Во-вторых, развитие технологий воздействия на нервную систему с помощью электромагнитных полей требует глубокого понимания механизмов взаимодействия этих полей с биологическими структурами.
+
+\section{Постановка задач и основные соотношения }
+\subsection{Задача рассеяния электромагнитной волны на бесконечном идеально проводящем цилиндре
+}
+Рассморим сначала задачу, где цилиндр не имеет внутреннего слоя. В этом случаем падающая волна будет записсываться, как:
+\begin{equation}\label{eq1}
+	\vec{H^{p}} = \vec{z_0}H_0\exp^{-i(k_zz + k_xx + k_yy)}.
+\end{equation}   
+Сделаем замену:
+\begin{equation}
+	x = \rho\cos{\varphi},
+\end{equation}
+\begin{equation}
+	y = \rho\sin{\varphi},
+\end{equation}
+\begin{equation}
+	k_x = k_\bot\cos{\varphi},
+\end{equation}
+\begin{equation}
+	k_y = k_\bot\sin{\varphi}.
+\end{equation}
+В итоге получаем волну в цилиндрических координатах:
+\begin{equation}\label{eq2}
+	 \vec{H^{p}} = \vec{z_0}H_0\exp^{-i(k_zz +  k_\bot\rho}.
+\end{equation}
+Запишим уравнение Гельмгольца для разных радиусов:
+\begin{equation}\label{eq3}
+	\rho\ge a: \Delta{H_z} + (k_0^2)H_z = 0
+\end{equation}
+\begin{equation}
+	\rho<a: \Delta{H_z} + (k^2)H_z = 0
+\end{equation}
+Решим одно из этих уравнений в декартовой системе координат, например, второе.
+\begin{equation}\label{eq4}
+	\frac{1}{\rho}\frac{\partial}{\partial\rho}\left(\rho\frac{\partial}{\partial\rho}\right)H_z+\frac{1}{\rho^2}\frac{\partial^2}{\partial\varphi^2}H_z+\frac{\partial^2}{\partial\varphi^2}H_z+k^2H_z=0,
+\end{equation}
+\begin{equation}\label{eq4}
+	\frac{1}{\rho}\frac{\partial}{\partial\rho}\left(\rho\frac{\partial}{\partial\rho}\right)H_z+\frac{1}{\rho^2}\frac{\partial^2}{\partial\varphi^2}H_z+((-k_z)^2+k^2)H_z=0,
+\end{equation}
+где $(-k_z^2)+k^2=k_\bot^2$.   \\
+Для решения задачи применим метод Фурье. Представим искомое решение в следующем виде:
+\begin{equation}
+	H_{z;m}(\rho, \varphi)=R(\rho)\Phi(\varphi).
+\end{equation}
+Преобразуем уравнение $(6)$: 
+\begin{equation}
+	\Phi\left(\frac{\partial^2}{\partial\rho^2}R+\frac{1}{\rho}\frac{\partial}{\partial\rho}R\right)+\frac{1}{\rho^2}R\frac{\partial^2\Phi}{\partial\varphi^2}+k_\bot^2R\Phi=0    \mid: R\Phi\frac{1}{\rho^2}.  
+\end{equation}	
+После некоторых преобразований получим выражение вида:
+\begin{equation}  
+	\rho^2\frac{1}{R}\left(\frac{\partial^2}{\partial\rho^2}R+\frac{1}{\rho}\frac{\partial}{\partial\rho}R\right)+\frac{1}{\Phi}\frac{\partial^2\Phi}{\partial\varphi^2}+\rho^2k_\bot^2=0.
+\end{equation}
+Выберем $\frac{\Phi''}{\Phi} = -m^2$ и распишем его решение. \\
+\begin{equation}
+	\Phi''+m^2\Phi = 0
+\end{equation}
+\begin{equation} 
+	R''+\frac{1}{\rho}R'-\frac{m^2}{\rho^2}R+k_\bot^2R=0.
+\end{equation}
+Из условия периодичности решения $\Phi(\varphi+2\pi)=\Phi(\varphi)$. \\
+Решение диффирициального уравнения (10) находим в виде:
+\begin{equation}
+	\Phi(\varphi)=A_1\sin(m\varphi)+A_2\cos(m\varphi), m=0, 1, 2,...
+\end{equation}
+А дифференциальное уравнение $R''+\frac{1}{\rho}R'-(\frac{m^2}{\rho^2}+k_\bot^2)R=0$ будем искать в виде:
+\begin{equation} 
+	R(\rho)=B_1J_m(k_\bot\rho)+B_2N_m(k_\bot\rho),
+\end{equation}
+\begin{equation} 
+	R(\rho)=B_1H^{(1)}_m(k_\bot\rho)+B_2H^{(2)}_m(k_\bot\rho),
+\end{equation}
+где $B_1^,B_1$ – произвольные постоянные, $H_m^{(1)},H_m^{(2)}$функции Ханкеля $m$-го порядка.\\
+Учитывая условие на бесконечности, решение дифференциального уравнения (11) имеет вид:
+\begin{equation}
+	R(\rho)=B_1J_m(k_\bot\rho).
+\end{equation}
+После нахождения решений дифференциальных уравнений (12) и (15) подставим их в (7)
+\begin{equation} 
+	H_{z;m}=B_1J_m(k_\bot\rho){A_me^{-im{\varphi}}}=B_mJ_m(k\rho)e^{-im{\varphi}},
+\end{equation}
+где $B_m=A_mB_1$.\\
+То же делаем и для решения (14) и получаем:
+\begin{equation} 
+	H_{z;m}=B_2H^{(2)}_{m}(k_\bot\rho){A_me^{-im{\varphi}}}=C_mH^{(2)}_m(k_\bot\rho)e^{-im{\varphi}},
+\end{equation}
+где $С_m=A_mB_2$.\\
+В итоге мы получаем систему уравнений для рассеяной волны:
+\begin{equation} 
+H^{s}_z=\sum\limits^{\infty}_{-\infty} B_mJ_m(k\rho)e^{-im{\varphi}}e^{-ik_zz}, \rho<a;
+\end{equation}
+\begin{equation} 
+H^{s}_z=\sum\limits^{\infty}_{-\infty} C_mH^{(2)}_m(k_\bot\rho)e^{-im{\varphi}}e^{-ik_zz}, \rho\ge a.
+\end{equation}
+Аналогично получаем систему уравнений для $E^{s}_z$:
+\begin{equation}
+E^{s}_z=\sum\limits^{\infty}_{-\infty} D_mJ_m(k\rho)e^{-im{\varphi}}e^{-ik_zz}, \rho<a;
+\end{equation}
+\begin{equation} 
+	E^{s}_z=\sum\limits^{\infty}_{-\infty} F_mH^{(2)}_m(k_\bot\rho)e^{-im{\varphi}}e^{-ik_zz}, \rho\ge a.
+\end{equation}
+Полная волна будет задаваться формулой:
+\begin{equation}
+	H^{l}_z=H^{s}_z+H^{p}_z
+\end{equation}
+Дальше найдём коэффициенты $B_m, C_m, D_m$ и $F_m$, используя граничные условия на границе $\rho=a$:
+\begin{equation} 
+	H_z\mid_{\rho=a+0}=H_z\mid_{\rho=a-0}
+\end{equation}
+\begin{equation} 
+	E_z\mid_{\rho=a+0}=E_z\mid_{\rho=a-0}
+\end{equation}
+\begin{equation} 
+	H_\varphi\mid_{\rho=a+0}=H_\varphi\mid_{\rho=a-0}
+\end{equation}
+\begin{equation} 
+	E_\varphi\mid_{\rho=a+0}=E_\varphi\mid_{\rho=a-0}
+\end{equation}
+Распишем подробно каждую часть этих уравнений:
+
+Внутри цилиндра $(\rho<a)$:
+\begin{equation} 
+	E^{\text{внутр}}_z=\sum\limits^{\infty}_{-\infty} D_mJ_m(k^{\text{внутр}}_\rho\rho)e^{-im{\varphi}}e^{-ik_zz}.
+\end{equation}
+\begin{equation} 
+	H^{\text{внутр}}_z=\sum\limits^{\infty}_{-\infty} B_mJ_m(k^{\text{внутр}}_\rho\rho)e^{-im{\varphi}}e^{-ik_zz}.
+\end{equation}
+Снаружи цилиндра $(\rho\ge a)$:
+\begin{equation} 
+	E^{\text{внеш}}_z=\sum\limits^{\infty}_{-\infty} [E_0(-i)^mJ_m(k^{\text{внеш}}_\rho\rho)+D_mH^{(2)}_m(k^{\text{внеш}}_\rho\rho)]e^{-im{\varphi}}e^{-ik_zz}, \rho<a.
+\end{equation}
+\begin{equation} 
+	H^{\text{внеш}}_z=\sum\limits^{\infty}_{-\infty} [H_0(-i)^mJ_m(k^{\text{внеш}}_\rho\rho)+C_mH^{(2)}_m(k^{\text{внеш}}_\rho\rho)]e^{-im{\varphi}}e^{-ik_zz}, \rho<a.
+\end{equation}
+где $k^{\text{внутр}}_\rho=\sqrt{k^2_0\varepsilon_2-k^2_z}$, $k^{\text{внеш}}_\rho=\sqrt{k^2_0\varepsilon_1-k^2_z}$
+Напишем матрицу, полученной системы:
+\begin{equation}
+	\left( \begin{array}{cccc}
+		J^{\text{внутр}}_m & -H^{(2)}_m & 0 & 0 \cr
+		0 & 0 & J^{\text{внутр}}_m & -H^{(2)}_m \cr
+		E^{\text{внутр}}_{\varphi, H_z} &
+		-E^{\text{внеш}}_{\varphi, H_z} & 	E^{\text{внутр}}_{\varphi, E_z} & 	-E^{\text{внеш}}_{\varphi, E_z} \cr
+	    H^{\text{внутр}}_{\varphi, H_z} & -H^{\text{внеш}}_{\varphi, H_z} & H^{\text{внутр}}_{\varphi, E_z} & -H^{\text{внеш}}_{\varphi, E_z} \cr
+	\end{array}\right)
+	\left( \begin{array}{c}
+		B_m \cr
+		C_m \cr
+		F_m \cr
+		D_m \cr
+	\end{array}\right)=\left( \begin{array}{c}
+	H_0(-i)^mJ_m \cr
+	E_0(-i)^mJ_m \cr
+	H_0(-i)^m\frac{i}{k_0}\frac{k^{\text{внеш}}_\rho J`_m-\frac{J_mk_z}{k_0a(-im)}}{(1-\frac{k_z^2}{k_0^2})} \cr
+	E_0(-i)^m\frac{i}{k_0}\frac{k^{\text{внеш}}_\rho J`_m-\frac{J_mk_z}{k_0a(-im)}}{(1-\frac{k_z^2}{k_0^2})} \cr
+	\end{array}\right),
+\end{equation}
+где
+	$E^{\text{внутр}}_{\varphi, H_z}=\frac{i}{k_0}\frac{k^{\text{внутр}}_\rho J`^{\text{внутр}}_m}{(1-\frac{k_z^2}{(k_0\varepsilon_2)^2})\varepsilon_2}$, $E^{\text{внеш}}_{\varphi, H_z}=\frac{i}{k_0}\frac{k^{\text{внеш}}_\rho H`^{2}_m}{(1-\frac{k_z^2}{k_0^2})}$, $E^{\text{внутр}}_{\varphi, E_z}=-\frac{i}{k_0}\frac{\frac{k_z J^{\text{внутр}}_m}{k_0\varepsilon_2a(-im)}}{(1-\frac{k_z^2}{k_0^2})}$, $E^{\text{внеш}}_{\varphi, E_z}=-\frac{i}{k_0}\frac{\frac{k_z H^{2}_m}{k_0\varepsilon_1a(-im)}}{(1-\frac{k_z^2}{(k_0)^2})}$, $H^{\text{внутр}}_{\varphi, H_z}=-\frac{i}{k_0}\frac{\frac{k_z J^{\text{внутр}}_m}{k_0\varepsilon_2a(-im)}}{(1-\frac{k_z^2}{k_0^2})}$, $H^{\text{внеш}}_{\varphi, H_z}=-\frac{i}{k_0}\frac{\frac{k_z H^{2}_m}{k_0\varepsilon_1a(-im)}}{(1-\frac{k_z^2}{(k_0)^2})}$, $H^{\text{внутр}}_{\varphi, E_z}=-\frac{i}{k_0}\frac{k^{\text{внутр}}_\rho J`^{\text{внутр}}_m}{(1-\frac{k_z^2}{(k_0\varepsilon_2)^2})}$, $H^{\text{внеш}}_{\varphi, E_z}=-\frac{i}{k_0}\frac{k^{\text{внеш}}_\rho H`^{2}_m}{(1-\frac{k_z^2}{k_0^2})}$, $J_m^{'}(x)=\pm\frac{m}{x}J_m(x)\mp J_{m\pm 1}(x)$, $H_m^{(2)'}(x)=\pm\frac{m}{x}H^{(2)}_m(x)\mp H_{m\pm 1}^{(2)}(x)$.
+Из этой матрицы получим коэффициенты:
+\begin{equation}
+	B_m=\frac{	\left| \begin{array}{cccc}
+			H_0(-i)^mJ_m & -H^{(2)}_m & 0 & 0 \cr
+			E_0(-i)^mJ_m & 0 & J^{\text{внутр}}_m & -H^{(2)}_m \cr
+			H_0(-i)^m\frac{i}{k_0}\frac{k^{\text{внеш}}_\rho J`_m-\frac{J_mk_z}{k_0a(-im)}}{(1-\frac{k_z^2}{k_0^2})} &
+			-E^{\text{внеш}}_{\varphi, H_z} & 	E^{\text{внутр}}_{\varphi, E_z} & 	-E^{\text{внеш}}_{\varphi, E_z} \cr
+			E_0(-i)^m\frac{i}{k_0}\frac{k^{\text{внеш}}_\rho J`_m-\frac{J_mk_z}{k_0a(-im)}}{(1-\frac{k_z^2}{k_0^2})} & -H^{\text{внеш}}_{\varphi, H_z} & H^{\text{внутр}}_{\varphi, E_z} & -H^{\text{внеш}}_{\varphi, E_z} \cr
+		\end{array}\right|}{det}
+\end{equation}
+\begin{equation}
+	C_m=\frac{  \left| \begin{array}{cccc}
+		    J^{\text{внутр}}_m & H_0(-i)^mJ_m & 0 & 0 \cr
+		    0 & E_0(-i)^mJ_m & J^{\text{внутр}}_m & -H^{(2)}_m \cr
+		    E^{\text{внутр}}_{\varphi, H_z} &
+		    H_0(-i)^m\frac{i}{k_0}\frac{k^{\text{внеш}}_\rho J`_m-\frac{J_mk_z}{k_0a(-im)}}{(1-\frac{k_z^2}{k_0^2})} & 	E^{\text{внутр}}_{\varphi, E_z} & 	-E^{\text{внеш}}_{\varphi, E_z} \cr
+		    H^{\text{внутр}}_{\varphi, H_z} & E_0(-i)^m\frac{i}{k_0}\frac{k^{\text{внеш}}_\rho J`_m-\frac{J_mk_z}{k_0a(-im)}}{(1-\frac{k_z^2}{k_0^2})} & H^{\text{внутр}}_{\varphi, E_z} & -H^{\text{внеш}}_{\varphi, E_z} \cr
+		\end{array}\right|}{det}
+\end{equation}
+\begin{equation}
+	F_m=\frac{\left| \begin{array}{cccc}
+			J^{\text{внутр}}_m & -H^{(2)}_m & H_0(-i)^mJ_m & 0 \cr
+			0 & 0 & E_0(-i)^mJ_m & -H^{(2)}_m \cr
+			E^{\text{внутр}}_{\varphi, H_z} &
+			-E^{\text{внеш}}_{\varphi, H_z} & 	H_0(-i)^m\frac{i}{k_0}\frac{k^{\text{внеш}}_\rho J`_m-\frac{J_mk_z}{k_0a(-im)}}{(1-\frac{k_z^2}{k_0^2})} & -E^{\text{внеш}}_{\varphi, E_z} \cr
+			H^{\text{внутр}}_{\varphi, H_z} & -H^{\text{внеш}}_{\varphi, H_z} & E_0(-i)^m\frac{i}{k_0}\frac{k^{\text{внеш}}_\rho J`_m-\frac{J_mk_z}{k_0a(-im)}}{(1-\frac{k_z^2}{k_0^2})} & -H^{\text{внеш}}_{\varphi, E_z} \cr
+		\end{array}\right|}{det}
+\end{equation}
+\begin{equation}
+	D_m=\frac{\left| \begin{array}{cccc}
+			J^{\text{внутр}}_m & -H^{(2)}_m & 0 & H_0(-i)^mJ_m \cr
+			0 & 0 & J^{\text{внутр}}_m & E_0(-i)^mJ_m \cr
+			E^{\text{внутр}}_{\varphi, H_z} &
+			-E^{\text{внеш}}_{\varphi, H_z} & 	E^{\text{внутр}}_{\varphi, E_z} & 	H_0(-i)^m\frac{i}{k_0}\frac{k^{\text{внеш}}_\rho J`_m-\frac{J_mk_z}{k_0a(-im)}}{(1-\frac{k_z^2}{k_0^2})} \cr
+			H^{\text{внутр}}_{\varphi, H_z} & -H^{\text{внеш}}_{\varphi, H_z} & H^{\text{внутр}}_{\varphi, E_z} & 	E_0(-i)^m\frac{i}{k_0}\frac{k^{\text{внеш}}_\rho J`_m-\frac{J_mk_z}{k_0a(-im)}}{(1-\frac{k_z^2}{k_0^2})} \cr
+		\end{array}\right|}{det}
+\end{equation}
+\subsection{Визуализация получившихся полей}
+\begin{figure}[h]
+\centering
+\includegraphics[width=0.8\linewidth]{Figure_1.png}
+\caption{Рисунок 1. Визуализация реальной и мнимой частей полей и их коэффициетов.}
+\label{fig:mpr}
+\end{figure}
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=0.8\linewidth]{Figure_2.png}
+	\caption{Рисунок 2. 2D визуализация.}
+	\label{fig:mpr}
+\end{figure}
+\subsection{Задача рассеяния электромагнитной волны на бесконечном идеально проводящем цилиндре со внутренним слоем
+}
+Задача рассеяния электромагнитной волны на бесконечном идеально проводящем цилиндре со внутренним слоем основывается на решении предыдущей задачи. 
+
+Для этой задачи решение остаётся аналогичным, только добавляются граничные условия для внутреннего слоя:
+\begin{equation} 
+	H_z\mid_{\rho=a_1+0}=H_z\mid_{\rho=a_1-0}, 	H_z\mid_{\rho=a_2+0}=H_z\mid_{\rho=a_2-0},
+\end{equation}
+\begin{equation} 
+	E_z\mid_{\rho=a_1+0}=E_z\mid_{\rho=a_1-0}, E_z\mid_{\rho=a_2+0}=E_z\mid_{\rho=a_2-0},
+\end{equation}
+\begin{equation} 
+	H_\varphi\mid_{\rho=a_1+0}=H_\varphi\mid_{\rho=a_1-0}, H_\varphi\mid_{\rho=a_2+0}=H_\varphi\mid_{\rho=a_2-0},
+\end{equation}
+\begin{equation} 
+	E_\varphi\mid_{\rho=a_1+0}=E_\varphi\mid_{\rho=a_1-0},	E_\varphi\mid_{\rho=a_1+0}=E_\varphi\mid_{\rho=a_1-0}.
+\end{equation}
+Распишем подробно каждую часть этих уравнений:
+
+На границе $(\rho=a_1)$:
+\begin{equation}
+	A_2J_m(k_1a_1)+B_2Y_m(k_1a_1)=A_3J_m(k_2a_1)
+\end{equation}
+\begin{equation}
+	C_2J_m(k_1a_1)+D_2Y_m(k_1a_1)=C_3J_m(k_2a_1)
+\end{equation}
+\begin{equation} 
+	\frac{1}{\mu_1}[A_2J'_m(k_1a_1)+B_2Y'_m(k_1a_1)]=\frac{1}{\mu_2}[A_3J'_m(k_2a_1)
+\end{equation}
+\begin{equation}
+	\frac{1}{\varepsilon_1}[C_2J'_m(k_1a_1)+D_2Y'_m(k_1a_1)]=\frac{1}{\varepsilon_2}[C_3J'_m(k_2a_1)
+\end{equation}
+На границе $(\rho=a_2)$:
+\begin{equation}
+	A_2J_m(k_1a_2)+B_2Y_m(k_1a_2)=A_1H^(2)_m(k_0a_2)+H_0(-i)^mJ_m(k_0a_2)
+\end{equation}
+\begin{equation}
+	C_2J_m(k_1a_2)+D_2Y_m(k_1a_2)=C_1H^(2)_m(k_0a_2)+E_0(-i)^mJ_m(k_0a_2)
+\end{equation}
+\begin{equation} 
+	\frac{1}{\mu_1}[A_2J'_m(k_1a_2)+B_2Y'_m(k_1a_2)]=\frac{1}{\mu_0}[A_1H^(2)'_m(k_0a_2)+H_0(-i)^mJ'_m(k_0a_2)]
+\end{equation}
+\begin{equation}
+	\frac{1}{\varepsilon_1}[C_2J'_m(k_1a_2)+D_2Y'_m(k_1a_2)]=\frac{1}{\varepsilon_0}[C_1H^(2)'_m(k_0a_2)+E_0(-i)^mJ'_m(k_0a_2)
+\end{equation}
+где $k_1=\sqrt{\varepsilon_1\mu_1k^2_0-k^2_z}$, $k_2=\sqrt{\varepsilon_2\mu_2k^2_0-k^2_z}$,
+$k_3=\sqrt{\varepsilon_3\mu_3k^2_0-k^2_z}$.
+
+Далее напишем матрицу, полученной системы:
+\begin{multline*}
+	\hspace*{-2.2cm}\left( \begin{array}{cccccccc}
+		J_m(k_1a_1) & Y_m & -J_m(k_2a_1) & 0 & 0 & 0 & 0 & 0 \cr
+		0 & 0 & 0 & J_m(k_1a_1) & Y_m(k_1a_1) & -J_m(k_2a_1) & 0 & 0 \cr
+		J'_m(k_1a_1) & Y'_m(k_1a_1) & -\xi_3J'_m(k_2a_1) & 0 & 0 & 0 & 0 & 0 \cr
+		0 & 0 & 0 & J'_m(k_1a_1) & Y'_m(k_1a_1) & -\xi_4J'_m(k_2a_1) & 0 & 0 \cr
+		J_m (k_1a_2) & Y_m(k_1a_2) & 0 & 0 & 0 & 0 & -H^(2)_m(k_0a_2) & 0 \cr
+		0 & 0 & 0 & J_m(k_1a_2) & Y_m(k_1a_2) & 0 & 0 & -H^(2)_m(k_0a_2) \cr
+		J'_m(k_1a_2) & Y'_m(k_1a_2) & 0 & 0 & 0 & 0 & -\xi_1H^(2)_m(k_0a_2) & 0 \cr
+		0 & 0 & 0 & J'_m(k_1a_2) & Y'_m(k_1a_2) & 0 & 0 & -\xi_2H'^(2)_m(k_0a_2) \cr
+	\end{array}\right)\bullet \\
+	\begin{flushleft}
+		\hspace*{-1.6cm}\bullet\left( \begin{array}{c}
+		A_2 \cr
+		B_2 \cr
+		A_3 \cr
+		C_2 \cr
+		D_2 \cr
+		C_3 \cr
+		A_1 \cr
+		C_1 \cr
+	\end{array}\right)=\left( \begin{array}{c}
+		0 \cr
+		0 \cr
+		0 \cr
+		0 \cr
+		H_0(-i)^mJ_m(k_0a_2) \cr
+		E_0(-i)^mJ_m(k_0a_2) \cr
+		H_0(-i)^m(\frac{mk_z}{k_0a_2}J_m(k_0a_2)-ik_0J'_m(k_0a_2)) \cr
+		E_0(-i)^m(\frac{mk_z}{k_0a_2}J_m(k_0a_2)+ik_0J'_m(k_0a_2)) \cr
+	\end{array}\right),
+	\end{flushleft}
+\end{multline*} \\
+где $\xi_1=\frac{\varepsilon_1k_0}{\varepsilon_0k_1}$, $\xi_2=\frac{\mu_1k_0}{\mu_0k_1}$, $\xi_3=\frac{\varepsilon_2k_1}{\varepsilon_1k_2}$, $\xi_4=\frac{\mu_2k_1}{\mu_1k_2}$
+
+Из этой матрицы получим коэффициенты:
+\begin{equation}
+	\hspace*{-2cm}A_2=\frac{\left| \begin{array}{cccccccc}
+			J_m(k_1a_1) & Y_m & -J_m(k_2a_1) & 0 & 0 & 0 & 0 & 0 \cr
+			0 & 0 & 0 & J_m(k_1a_1) & Y_m(k_1a_1) & -J_m(k_2a_1) & 0 & 0 \cr
+			J'_m(k_1a_1) & Y'_m(k_1a_1) & -\xi_3J'_m(k_2a_1) & 0 & 0 & 0 & 0 & 0 \cr
+			0 & 0 & 0 & J'_m(k_1a_1) & Y'_m(k_1a_1) & -\xi_4J'_m(k_2a_1) & 0 & 0 \cr
+			J_m (k_1a_2) & Y_m(k_1a_2) & 0 & 0 & 0 & 0 & -H^(2)_m(k_0a_2) & 0 \cr
+			0 & 0 & 0 & J_m(k_1a_2) & Y_m(k_1a_2) & 0 & 0 & -H^(2)_m(k_0a_2) \cr
+			J'_m(k_1a_2) & Y'_m(k_1a_2) & 0 & 0 & 0 & 0 & -\xi_1H^(2)_m(k_0a_2) & 0 \cr
+			0 & 0 & 0 & J'_m(k_1a_2) & Y'_m(k_1a_2) & 0 & 0 & -\xi_2H'^(2)_m(k_0a_2) \cr
+		\end{array}\right|}{det}
+\end{equation}
+\end{document}
